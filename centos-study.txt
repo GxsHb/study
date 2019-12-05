@@ -1,0 +1,2 @@
+﻿查看centos/redhat版本
+rpm -q centos-release
