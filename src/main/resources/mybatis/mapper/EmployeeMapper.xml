@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hb.study.mapper.EmployeeMapper">
+    <!--<cache></cache>-->
+  <resultMap id="EmployeeResultMap" type="com.hb.study.dao.Employee">
+    <id column="employee_id" jdbcType="INTEGER" property="employeeId" />
+    <result column="employee_name" jdbcType="VARCHAR" property="employeeName" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="email" jdbcType="CHAR" property="email" />
+    <result column="birth" jdbcType="DATE" property="birth"/>
+      <!--<result column="department_id" property="departmentId"/>-->
+
+    <!--<association property="department" javaType="com.hb.study.dao.Department">-->
+      <!--<id column="department_id"  property="departmentId"/>-->
+      <!--<result column="department_name" property="departmentName"/>-->
+    <!--</association>-->
+
+     <!--联合查询:级联属性封装结果集 -->
+    <!--<result column="department_id" property="department.departmentId"/>-->
+    <!--<result column="employee_name" property="department.departmentName"/>-->
+
+
+    <!--分步查询-->
+    <association column="department_id" property="department" select="com.hb.study.mapper.DepartmentMapper.queryDepartmentById">
+    </association>
+
+  </resultMap>
+
+  <sql id="Employee_Column_List">
+       employee_id , employee_name, gender, email, birth, e.department_id
+  </sql>
+
+      <select id="queryEmployeeById" resultMap="EmployeeResultMap">
+              select <include refid="Employee_Column_List"/>  from employee e
+              <if test="_parameter != null">
+                where employee_id = #{employeeId}
+              </if>
+      </select>
+
+     <select id="queryAllEmployee" resultMap="EmployeeResultMap">
+            select <include refid="Employee_Column_List"/> , d.department_id, d.department_name from employee e, department d where
+            e.department_id = d.department_id;
+    </select>
+
+    <update id="editEmployee">
+
+    </update>
+
+    <delete id="deleteEmployeeById">
+
+    </delete>
+
+    <insert id="addEmployee">
+
+    </insert>
+</mapper>

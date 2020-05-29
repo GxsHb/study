@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Mybatis config sample -->
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"></setting>
+        <!--<setting name="autoMappingBehavior" value="none"/>-->
+        <!--<setting name="cacheEnabled" value="true"></setting>-->
+        <setting name="lazyLoadingEnabled" value="true"></setting>
+        <setting name="aggressiveLazyLoading" value="false"></setting>
+    </settings>
+
+    <typeAliases>
+        <!--设置resultType别名-->
+        <!--<typeAlias type="project.pojo.Devices" alias="Device"></typeAlias>-->
+        <!--<typeAlias type="project.pojo.Order" alias="Order"></typeAlias>-->
+        <package name="project.pojo"></package>
+    </typeAliases>
+</configuration>

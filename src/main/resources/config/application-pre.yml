@@ -1,0 +1,36 @@
+hb:
+ cs:
+   title: my happy something
+#   url: http://www.baidu.comg
+   testResult:
+    - 404
+    - 303
+    - 502
+    - 500
+   tester: [hb,hj]
+
+#  对象行内写法,map写法同对象
+#  custom: {result: success}
+#  custom:
+#    result: success
+#   数组和集合行内写法
+#   array: [first, second]
+#   数组和集合正常写法
+#    array:
+#      - first
+#      - second
+
+
+
+
+server:
+  port: 24
+  servlet:
+    context-path: /hbpre
+#
+#spring:
+#  datasource:
+#    initialization-mode: always
+#    schema:
+#      - classpath:sql/department.sql
+#      - classpath:sql/employee.sql

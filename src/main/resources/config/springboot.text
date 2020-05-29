@@ -1,0 +1,29 @@
+springboot简化部署,不需要将web应用打成war包,可以通过添加如下依赖,将web应用打成可执行的jar包,无需在目标服务器安装tomcat
+ <plugins>
+      <plugin>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+  </plugins>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1、如果同时存在properties和yml文件,默认使用properties。
+2、自定义配置springboot不会识别,可以通过@Value(${customName.key})和@ConfigurationProperties(prefix = "customName"）
+   注解自己读取自定义配置。
+
