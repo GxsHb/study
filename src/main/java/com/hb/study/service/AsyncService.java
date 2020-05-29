@@ -9,6 +9,5 @@ public class AsyncService {
               System.out.println("异步");
        }
        public void sync(){
-           System.out.println("同步");
        }
 }
