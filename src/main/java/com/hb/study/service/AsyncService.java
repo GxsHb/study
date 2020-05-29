@@ -6,7 +6,7 @@ package com.hb.study.service;
  */
 public class AsyncService {
        public void async(){
-
+              System.out.println("异步");
        }
        public void sync(){
 
