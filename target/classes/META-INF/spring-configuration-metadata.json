@@ -1,0 +1,48 @@
+{
+  "groups": [
+    {
+      "name": "hb.cs",
+      "type": "com.hb.study.pojo.ImgPO",
+      "sourceType": "com.hb.study.pojo.ImgPO"
+    },
+    {
+      "name": "spring.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.hb.study.myconfig.DruidConfig",
+      "sourceMethod": "druid()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "hb.cs.test-result",
+      "type": "java.lang.String[]",
+      "sourceType": "com.hb.study.pojo.ImgPO",
+      "defaultValue": [
+        "success",
+        "fail"
+      ]
+    },
+    {
+      "name": "hb.cs.tester",
+      "type": "java.lang.String[]",
+      "sourceType": "com.hb.study.pojo.ImgPO",
+      "defaultValue": [
+        "hb",
+        "zzy",
+        "wl",
+        "xl"
+      ]
+    },
+    {
+      "name": "hb.cs.title",
+      "type": "java.lang.String",
+      "sourceType": "com.hb.study.pojo.ImgPO"
+    },
+    {
+      "name": "hb.cs.url",
+      "type": "java.lang.String",
+      "sourceType": "com.hb.study.pojo.ImgPO"
+    }
+  ],
+  "hints": []
+}
